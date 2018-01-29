@@ -3,9 +3,11 @@ FROM java:8-jdk
 # Maintainers on this project are the following:
 MAINTAINER Martin Aksel Jensen <maj@translucent.dk>
 
+RUN apt update && apt install -y apt-transport-https
+
 # Install the Atlassian Plugins SDK using the official Aptitude debian
 # package repository
-RUN echo "deb http://sdkrepo.atlassian.com/debian/ stable contrib" >>/etc/apt/sources.list \
+RUN echo "deb https://sdkrepo.atlassian.com/debian/ stable contrib" >> /etc/apt/sources.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B07804338C015B73 \
     && apt-get update \
     && apt-get install --yes atlassian-plugin-sdk=6.3.6
