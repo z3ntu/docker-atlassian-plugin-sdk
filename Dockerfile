@@ -8,7 +8,7 @@ MAINTAINER Martin Aksel Jensen <maj@translucent.dk>
 RUN echo "deb http://sdkrepo.atlassian.com/debian/ stable contrib" >>/etc/apt/sources.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B07804338C015B73 \
     && apt-get update \
-    && apt-get install --yes atlassian-plugin-sdk=6.2.2
+    && apt-get install --yes atlassian-plugin-sdk=6.3.6
 
 # Copy Maven preference files to predefine the command line question about
 # subscribing to the mailing list to `NO`.
